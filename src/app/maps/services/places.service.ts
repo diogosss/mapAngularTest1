@@ -40,6 +40,12 @@ export class PlacesService {
 
   getPlacesByQuery( query: string = ''){
 
+    if(query.length === 0){
+      this.isLoadingPlaces = false;
+      this.places = [];
+      return;
+    }
+
     if(!this.useLocation) throw Error('No hay user location');
 
     //todo: evaluar cuando el query es vacio
