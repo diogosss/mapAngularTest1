@@ -78,6 +78,16 @@ export class MarkersPageComponent{
 
     this.saveToLocalStorage();
 
+
+    // ver como cambia las coor al mover el marker
+    // marker.on('dragend', () => {
+    //   console.log(marker.getLngLat());
+    // });
+
+    marker.on('dragend', () =>  this.saveToLocalStorage());
+
+    //dragend
+
   }
 
   deleteMarker(index: number){
