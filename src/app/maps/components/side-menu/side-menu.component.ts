@@ -13,17 +13,20 @@ interface MenuItem {
 export class SideMenuComponent {
 
   public menuItems: MenuItem[] =[
+    // {
+    //   route: '/maps/fullscreen', name: 'FullScreen'
+    // },
+    // {
+    //   route: '/maps/zoom-range', name: 'Zoom-Range'
+    // },
     {
-      route: '/maps/fullscreen', name: 'FullScreen'
+      route: '/maps/markers', name: 'Mapa de casas'
     },
     {
-      route: '/maps/zoom-range', name: 'Zoom-Range'
+      route: '/maps/properties', name: 'Lista de casas'
     },
     {
-      route: '/maps/markers', name: 'Markers'
-    },
-    {
-      route: '/maps/properties', name: 'Houses'
+      route: '/maps/info', name: 'Info'
     },
   ];
 
