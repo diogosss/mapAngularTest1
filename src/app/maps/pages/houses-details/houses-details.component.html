@@ -1,0 +1,42 @@
+<div *ngIf="currentHouse" class="edit-form">
+  <h4>Tutorial</h4>
+
+  <div class="card">
+    <!-- <img src="..." alt="" class="card-img-top"> -->
+    <app-mini-map [lngLat]="currentHouse.lngLat"></app-mini-map>
+    <div class="card-body">
+      <h5 class="card-title">{{ currentHouse.title}}</h5>
+      <p class="cart-text">{{currentHouse.description}}</p>
+      <p class="cart-text">{{currentHouse.lngLat}}</p>
+    </div>
+  </div>
+
+  <button
+    class="badge badge-primary mr-2"
+    *ngIf="currentHouse.description"
+    (click)="updatePublished(false)"
+  >
+    UnPublish
+  </button>
+  <button
+    *ngIf="!currentHouse.description"
+    class="badge badge-primary mr-2"
+    (click)="updatePublished(true)"
+  >
+    Publish
+  </button>
+
+  <button class="badge badge-danger mr-2" (click)="deleteTutorial()">
+    Delete
+  </button>
+
+  <button type="submit" class="badge badge-success" (click)="updateTutorial()">
+    Update
+  </button>
+  <p>{{ message }}</p>
+</div>
+
+<div *ngIf="!currentHouse">
+  <br />
+  <p>Cannot access this Tutorial...</p>
+</div>

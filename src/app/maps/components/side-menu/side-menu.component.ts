@@ -23,7 +23,10 @@ export class SideMenuComponent {
       route: '/maps/markers', name: 'Mapa de casas'
     },
     {
-      route: '/maps/properties', name: 'Lista de casas'
+      route: '/maps/details', name: 'Lista de casas'
+    },
+    {
+      route: '/maps/add', name: 'Añadir de casas'
     },
     {
       route: '/maps/info', name: 'Info'

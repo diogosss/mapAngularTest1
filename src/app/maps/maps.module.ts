@@ -11,6 +11,10 @@ import { PropertiesPageComponent } from './pages/properties-page/properties-page
 import { ZoomRangePageComponent } from './pages/zoom-range-page/zoom-range-page.component';
 
 import * as mapboxgl from 'mapbox-gl';
+import { HousesDetailsComponent } from './pages/houses-details/houses-details.component';
+import { HousesListComponent } from './pages/houses-list/houses-list.component';
+import { HousesAddComponent } from './pages/houses-add/houses-add.component';
+import { InfoComponent } from './pages/info/info.component';
 
 
 @NgModule({
@@ -21,7 +25,11 @@ import * as mapboxgl from 'mapbox-gl';
     FullScreenPageComponent,
     MarkersPageComponent,
     PropertiesPageComponent,
-    ZoomRangePageComponent
+    ZoomRangePageComponent,
+    HousesDetailsComponent,
+    HousesListComponent,
+    HousesAddComponent,
+    InfoComponent
   ],
   imports: [
     CommonModule,

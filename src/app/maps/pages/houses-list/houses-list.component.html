@@ -1,0 +1,29 @@
+<div class="list row">
+  <div class="col-md-3">
+    <h4>Listado de casas</h4>
+    <ul class="list-group">
+      <li
+        class="list-group-item"
+        *ngFor="let house of houses; let i = index"
+        [class.active]="i == currentIndex"
+        (click)="setActiveTHouse(house, i)"
+      >
+        {{ house.title }}
+      </li>
+    </ul>
+
+  </div>
+  <div class="col-md-6">
+    <div *ngIf="currentHouse">
+      <app-houses-details
+        (refreshList)="refreshList()"
+        [house]="currentHouse"
+      ></app-houses-details>
+    </div>
+
+    <div *ngIf="!currentHouse">
+      <br />
+      <p>Please click on a House...</p>
+    </div>
+  </div>
+</div>

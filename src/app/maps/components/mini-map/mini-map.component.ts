@@ -11,7 +11,9 @@ export class MiniMapComponent  {
   @Input() lngLat?: [number, number]
   @ViewChild('map') divMap?: ElementRef;
 
-  ngAfterViewInit(){
+  ngOnChanges(){ // Hay un bug al momento de buscar una casa la primera vez
+
+    console.log('AfterInitMinMap');console.log(this.lngLat);
 
     if( !this.divMap?.nativeElement) throw "Map Div not found";
     if( !this.lngLat) throw "LngLat cant be null";
