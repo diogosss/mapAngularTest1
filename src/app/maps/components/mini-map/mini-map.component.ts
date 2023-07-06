@@ -11,7 +11,7 @@ export class MiniMapComponent  {
   @Input() lngLat?: [number, number]
   @ViewChild('map') divMap?: ElementRef;
 
-  ngOnChanges(){ // Hay un bug al momento de buscar una casa la primera vez
+  ngOnChanges(){ // Hay un bug al momento de buscar una casa no aparece el mapa
 
     console.log('AfterInitMinMap');console.log(this.lngLat);
 
@@ -23,7 +23,7 @@ export class MiniMapComponent  {
       style: 'mapbox://styles/mapbox/streets-v12',
       center: this.lngLat,
       zoom: 15,
-      interactive:false,
+      interactive:true,
     });
 
     new Marker()
@@ -33,3 +33,14 @@ export class MiniMapComponent  {
 
   }
 }
+
+
+/*
+
+ngOnInit() is called right after the directive's data-bound properties have been checked for the first time,
+and before any of its children have been checked. It is invoked only once when the directive is instantiated.
+
+ngAfterViewInit() is called after a component's view, and its children's views, are created.
+Its a lifecycle hook that is called after a component's view has been fully initialized.
+
+*/

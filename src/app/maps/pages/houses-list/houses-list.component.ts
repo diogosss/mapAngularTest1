@@ -9,9 +9,8 @@ import { House } from '../../models/house.model';
 })
 export class HousesListComponent implements OnInit {
 
-  //houses?: House[];
   currentHouse?: House;
-  currentIndex = -1;
+  currentIndex = 0;
   title = '';
 
   constructor() { }
