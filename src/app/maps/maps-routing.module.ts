@@ -8,6 +8,7 @@ import { PropertiesPageComponent } from './pages/properties-page/properties-page
 import { HousesListComponent } from './pages/houses-list/houses-list.component';
 import { HousesAddComponent } from './pages/houses-add/houses-add.component';
 import { InfoComponent } from './pages/info/info.component';
+import { NodeListComponent } from './pages/node-list/node-list.component';
 
 const routes: Routes = [
   {
@@ -31,6 +32,9 @@ const routes: Routes = [
       },
       {
         path:'add', component: HousesAddComponent,
+      },
+      {
+        path:'nodes', component: NodeListComponent,
       },
       {
         path:'info', component: InfoComponent,

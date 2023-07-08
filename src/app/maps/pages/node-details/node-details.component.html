@@ -1,0 +1,111 @@
+<div *ngIf="currentMonitoreo" class="edit-form">
+  <h4>📚 Información del nodo Lora:</h4>
+  <h5>🔐 Estado sensores y alarmas</h5>
+  <div>
+    <table>
+      <thead>
+        <tr>
+          <th>Sensor<br>1</th>
+          <th>Sensor<br>2</th>
+          <th>Sensor<br>3</th>
+          <th>Sensor<br>4</th>
+          <th>Sensor<br>5</th>
+          <th>Estado<br>Alarma</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <span *ngIf="currentMonitoreo.sensor1 === '00'" >✔️</span>
+            <span *ngIf="currentMonitoreo.sensor1 === '01'" >🚨</span>
+          </td>
+          <td>
+            <span *ngIf="currentMonitoreo.sensor2 === '00'" >✔️</span>
+            <span *ngIf="currentMonitoreo.sensor2 === '01'" >🚨</span>
+          </td>
+          <td>
+            <span *ngIf="currentMonitoreo.sensor3 === '00'" >✔️</span>
+            <span *ngIf="currentMonitoreo.sensor3 === '01'" >🚨</span>
+          </td>
+          <td>
+            <span *ngIf="currentMonitoreo.sensor4 === '00'" >✔️</span>
+            <span *ngIf="currentMonitoreo.sensor4 === '01'" >🚨</span>
+          </td>
+          <td>
+            <span *ngIf="currentMonitoreo.sensor5 === '00'" >✔️</span>
+            <span *ngIf="currentMonitoreo.sensor5 === '01'" >🚨</span>
+          </td>
+          <td>
+            <span *ngIf="currentMonitoreo.statusAlarm === '00'" >✔️</span>
+            <span *ngIf="currentMonitoreo.statusAlarm === '01'" >🚨</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <br>
+  <h5>📘 Información del Nodo Lora</h5>
+  <div>
+    <form>
+      <div class="form-group">
+        <label for="title">🏚️ Nombre de la casa</label>
+        <input
+          placeholder="Nombre de referencia de la casa"
+          type="text"
+          class="form-control"
+          id="title"
+          [(ngModel)]="currentMonitoreo.nombre"
+          name="title"
+        />
+      </div>
+      <div class="form-group">
+        <label for="direction">🧭 Dirección</label>
+        <input
+          placeholder="Calle principal y secundaria, número de casa"
+          type="text"
+          class="form-control"
+          id="direction"
+          [(ngModel)]="currentMonitoreo.direccion"
+          name="direction"
+        />
+      </div>
+      <div class="form-group">
+        <label for="latitud">🌐 Latitud</label>
+        <input
+          placeholder="Latitud"
+          type="text"
+          class="form-control"
+          id="latitud"
+          [(ngModel)]="currentMonitoreo.latitud"
+          name="latitud"
+        />
+      </div>
+      <div class="form-group">
+        <label for="longitud">🌐 Longitud</label>
+        <input
+          placeholder="Longitud"
+          type="text"
+          class="form-control"
+          id="longitud"
+          [(ngModel)]="currentMonitoreo.longitud"
+          name="longitud"
+        />
+      </div>
+    </form>
+  </div>
+
+
+  <button type="button" class="btn rounded-pill btn-danger mr-2 " (click)="deleteTutorial()">
+    🗑️ Borrar Nodo
+  </button>
+
+  <button type="button" type="submit" class="btn rounded-pill btn-success " (click)="updateTutorial()">
+    💾 Actualizar Información
+  </button>
+  <p>{{ message }}</p>
+</div>
+
+<div *ngIf="!currentMonitoreo">
+  <br />
+  <p>⛔ No se puede aceder a esta casa...</p>
+</div>

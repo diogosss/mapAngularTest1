@@ -15,6 +15,9 @@ import { HousesDetailsComponent } from './pages/houses-details/houses-details.co
 import { HousesListComponent } from './pages/houses-list/houses-list.component';
 import { HousesAddComponent } from './pages/houses-add/houses-add.component';
 import { InfoComponent } from './pages/info/info.component';
+import { NodeListComponent } from './pages/node-list/node-list.component';
+import { NodeDetailsComponent } from './pages/node-details/node-details.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -29,11 +32,13 @@ import { InfoComponent } from './pages/info/info.component';
     HousesDetailsComponent,
     HousesListComponent,
     HousesAddComponent,
-    InfoComponent
+    InfoComponent,
+    NodeListComponent,
+    NodeDetailsComponent
   ],
   imports: [
     CommonModule,
-    MapsRoutingModule
+    MapsRoutingModule,FormsModule
   ]
 })
 export class MapsModule { }

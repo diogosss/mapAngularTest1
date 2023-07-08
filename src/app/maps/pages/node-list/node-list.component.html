@@ -1,0 +1,29 @@
+<div class="list row">
+  <div class="col-md-6">
+    <h4>📳 Lista de Nodos Lora</h4>
+    <ul class="list-group">
+      <li
+        class="list-group-item"
+        *ngFor="let monitoreo of monitoreoM; let i = index"
+        [class.active]="i == currentIndex"
+        (click)="setActiveMonitoreo(monitoreo, i)"
+      >
+        {{ monitoreo.numNode }}
+      </li>
+    </ul>
+
+  </div>
+  <div class="col-md-6">
+    <div *ngIf="currentMonitoreo">
+      <app-node-details
+        (refreshList)="refreshList()"
+        [monitoreo]="currentMonitoreo">
+      </app-node-details>
+    </div>
+
+    <div *ngIf="!currentMonitoreo">
+      <br />
+      <p>🖱️ Porfavor selecciona un nodo Lora...</p>
+    </div>
+  </div>
+</div>

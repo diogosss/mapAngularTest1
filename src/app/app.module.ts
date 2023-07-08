@@ -8,6 +8,8 @@ import { AppComponent } from './app.component';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { environment } from '../environments/environment';
+import { NodeDetailsComponent } from './maps/pages/node-details/node-details.component';
+import { NodeListComponent } from './maps/pages/node-list/node-list.component';
 
 @NgModule({
   declarations: [

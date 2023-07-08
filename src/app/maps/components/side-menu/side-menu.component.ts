@@ -29,6 +29,9 @@ export class SideMenuComponent {
       route: '/maps/add', name: 'Añadir de casas'
     },
     {
+      route: '/maps/nodes', name: 'Configuración de nodos'
+    },
+    {
       route: '/maps/info', name: 'Info'
     },
   ];
