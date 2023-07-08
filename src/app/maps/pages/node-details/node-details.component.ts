@@ -22,6 +22,8 @@ export class NodeDetailsComponent implements OnInit {
     direccion: '',
     latitud: '',
     longitud: '',
+    user:'',
+    pass:'',
   };
 
   message = '';
@@ -45,6 +47,8 @@ export class NodeDetailsComponent implements OnInit {
       direccion: this.currentMonitoreo.direccion,
       latitud: this.currentMonitoreo.latitud,
       longitud: this.currentMonitoreo.longitud,
+      user: this.currentMonitoreo.user,
+      pass: this.currentMonitoreo.pass
     };
 
     if (this.currentMonitoreo.key) {

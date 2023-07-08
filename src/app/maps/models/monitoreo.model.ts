@@ -11,4 +11,6 @@ export class Monitoreo {
   direccion?:string;
   latitud?:string;
   longitud?:string;
+  user?:string;
+  pass?:string;
 }
