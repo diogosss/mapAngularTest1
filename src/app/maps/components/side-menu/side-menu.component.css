@@ -3,3 +3,7 @@ li {
   cursor: pointer;
   transition: 0.3s all;
 }
+
+.list-group{
+  width: 300px;
+}
