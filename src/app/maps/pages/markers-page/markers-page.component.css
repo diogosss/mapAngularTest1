@@ -15,3 +15,12 @@ button {
   bottom: 30px;
   right: 30px;
 }
+
+.markerMonitor {
+  background-image: url('../../../../assets/casaMonitor.png');
+  background-size: cover;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+}

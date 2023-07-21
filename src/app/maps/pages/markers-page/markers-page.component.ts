@@ -38,12 +38,12 @@ export class MarkersPageComponent{
       zoom: this.zoom,
     });
 
-    this.readFromLocaStorage();
+    this.readFromCloudStorage();
 
     // //crear markador personalizado
     // const markerHtml = document.createElement('div');
-    // markerHtml.innerHTML = 'Diogos';
-
+    // markerHtml.innerHTML = '🏟';
+    // //markerHtml.className = 'markerMonitor';
     // const marker = new Marker({
     //   //color: 'red'
     //   element: markerHtml
@@ -52,16 +52,9 @@ export class MarkersPageComponent{
 
   }
 
-  createMarker(){
-    if( !this.map) return;
 
-    const color = '#xxxxxx'.replace(/x/g, y => (Math.random()*16|0).toString(16));
-    const lgnLat = this.map?.getCenter();
 
-    this.addMarker(lgnLat,color);
-  }
-
-  addMarker( lngLat: LngLat, color: string ){
+  paintMarker( lngLat: LngLat, color: string ){
     if( !this.map) return;
 
     const marker = new Marker({
@@ -76,7 +69,7 @@ export class MarkersPageComponent{
       marker: marker,
     });
 
-    this.saveToLocalStorage();
+    this.saveToCloudStorage();
 
 
     // ver como cambia las coor al mover el marker
@@ -84,16 +77,12 @@ export class MarkersPageComponent{
     //   console.log(marker.getLngLat());
     // });
 
-    marker.on('dragend', () =>  this.saveToLocalStorage());
+    marker.on('dragend', () =>  this.saveToCloudStorage());
 
     //dragend
 
   }
 
-  deleteMarker(index: number){
-    this.markers[index].marker.remove();
-    this.markers.splice( index, 1);
-  }
 
   flyTo(marker: Marker){
 
@@ -104,7 +93,22 @@ export class MarkersPageComponent{
 
   }
 
-  saveToLocalStorage(){
+  /**
+   * SAVE to Local Storage
+   */
+  // saveToLocalStorage(){
+  //   //console.log(this.markers);
+  //   const plainMarkers: PlainMarker[] = this.markers.map(({color, marker}) => {
+  //     return{
+  //       color,
+  //       lngLat: marker.getLngLat().toArray()
+  //     }
+  //   });
+
+  /**
+   * SAVE to Local Storage
+   */
+  saveToCloudStorage(){
     //console.log(this.markers);
     const plainMarkers: PlainMarker[] = this.markers.map(({color, marker}) => {
       return{
@@ -118,7 +122,27 @@ export class MarkersPageComponent{
     localStorage.setItem('plainMarkers', JSON.stringify(plainMarkers));
   }
 
-  readFromLocaStorage(){
+  /**
+   * Local Storage for tests
+   */
+  // readFromLocaStorage(){
+
+  //   const plainMarkersString = localStorage.getItem('plainMarkers') ?? '[]';
+  //   const plainMarkers = JSON.parse( plainMarkersString);
+  //   console.log(plainMarkers);
+
+  //   plainMarkers.forEach ( ({color, lngLat}:any) => {
+  //     const [ lng, lat ] = lngLat;
+  //     const coords = new LngLat( lng, lat);
+  //     this.paintMarker(coords, color)
+  //   })
+
+  // }
+
+  /**
+   * Firebase Storage
+   */
+  readFromCloudStorage(){
 
     const plainMarkersString = localStorage.getItem('plainMarkers') ?? '[]';
     const plainMarkers = JSON.parse( plainMarkersString);
@@ -127,9 +151,10 @@ export class MarkersPageComponent{
     plainMarkers.forEach ( ({color, lngLat}:any) => {
       const [ lng, lat ] = lngLat;
       const coords = new LngLat( lng, lat);
-      this.addMarker(coords, color)
+      this.paintMarker(coords, color)
     })
 
   }
+
 
 }
