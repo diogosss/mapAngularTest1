@@ -56,6 +56,8 @@ export class NodeDetailsComponent implements OnInit {
         .then(() => this.message = 'The node was updated successfully!')
         .catch(err => console.log(err));
     }
+
+    this.saveUsers();
   }
 
   deleteTutorial(): void {
@@ -68,5 +70,22 @@ export class NodeDetailsComponent implements OnInit {
         .catch(err => console.log(err));
     }
   }
+
+  /**
+   *
+   */
+  saveUsers(): void {
+
+    const data = {
+      nombre: this.currentMonitoreo.user,
+      password: this.currentMonitoreo.pass,
+      numNode: this.currentMonitoreo.numNode
+    };
+
+    this.monitoreoService.createUsuario(data).then(() => {
+      console.log('Created new item successfully!');
+    });
+  }
+
 
 }

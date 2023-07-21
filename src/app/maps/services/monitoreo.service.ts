@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
 import { Monitoreo } from '../models/monitoreo.model';
+import { Usuario } from '../models/usuario.model';
 
 
 @Injectable({
@@ -9,11 +10,14 @@ import { Monitoreo } from '../models/monitoreo.model';
 export class MonitoreoSService {
 
   private dbPath = '/monitoreo/last';
+  private dbPathUsuarios = '/Usuarios';
 
   monitoreoRef: AngularFireList<Monitoreo>;
+  usuariosRef: AngularFireList<Usuario>;
 
   constructor(private db: AngularFireDatabase) {
     this.monitoreoRef = db.list(this.dbPath);
+    this.usuariosRef = db.list(this.dbPathUsuarios);
   }
 
   getAll(): AngularFireList<Monitoreo> {
@@ -34,5 +38,12 @@ export class MonitoreoSService {
 
   deleteAll(): Promise<void> {
     return this.monitoreoRef.remove();
+  }
+
+  /**
+   * Actualizar usuarios
+   */
+  createUsuario(value: any): any {
+    return this.usuariosRef.push(value);
   }
 }
