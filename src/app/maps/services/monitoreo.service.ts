@@ -10,14 +10,11 @@ import { Usuario } from '../models/usuario.model';
 export class MonitoreoSService {
 
   private dbPath = '/monitoreo/last';
-  private dbPathUsuarios = '/Usuarios';
 
   monitoreoRef: AngularFireList<Monitoreo>;
-  usuariosRef: AngularFireList<Usuario>;
 
   constructor(private db: AngularFireDatabase) {
     this.monitoreoRef = db.list(this.dbPath);
-    this.usuariosRef = db.list(this.dbPathUsuarios);
   }
 
   getAll(): AngularFireList<Monitoreo> {
@@ -43,7 +40,8 @@ export class MonitoreoSService {
   /**
    * Actualizar usuarios
    */
-  createUsuario(value: any): any {
-    return this.usuariosRef.push(value);
+  createUsuario(key: any , value: any): any {
+    // return this.usuariosRef.push(value); //push gnera la key por mi
+    return this.db.database.ref('Usuarios').child(key).set(value);
   }
 }

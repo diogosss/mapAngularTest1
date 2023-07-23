@@ -77,12 +77,12 @@ export class NodeDetailsComponent implements OnInit {
   saveUsers(): void {
 
     const data = {
-      nombre: this.currentMonitoreo.user,
+      user: this.currentMonitoreo.user,
       password: this.currentMonitoreo.pass,
       numNode: this.currentMonitoreo.numNode
     };
 
-    this.monitoreoService.createUsuario(data).then(() => {
+    this.monitoreoService.createUsuario(this.currentMonitoreo.user, data).then(() => {
       console.log('Created new item successfully!');
     });
   }
