@@ -6,15 +6,17 @@
 .column-2 {
   float: left;
   width: 45%;
-  padding: 40px;
-  padding-left:70px;
-  padding-right: 70px;
-  height: 400px;
-  margin:30px;
+  padding: 10px;
+  padding-left:20px;
+  padding-right: 24px;
+  height: 440px;
+  margin:18px;
   margin-right:30px;
   margin-bottom: 70px;
   background-color: #627dd3;
-  line-height:2;
+  line-height:1.5;
+  border-radius: 20px;
+  box-shadow: 6px 5px 6px 0px rgba(0, 0, 0, 0.7);
 }
 
 /* Large profile image */
@@ -22,4 +24,16 @@
   background: url('../../../../assets/person.webp');
   background-size: cover;
   background-position: center;
+}
+
+.about-me{
+
+}
+
+.about-me h1{
+text-align: center;
+}
+
+.about-me p{
+  text-align:justify;
 }
