@@ -45,8 +45,8 @@ export class NodeDetailsComponent implements OnInit {
     const data = {
       nombre: this.currentMonitoreo.nombre,
       direccion: this.currentMonitoreo.direccion,
-      latitud: this.currentMonitoreo.latitud,
-      longitud: this.currentMonitoreo.longitud,
+      //latitud: this.currentMonitoreo.latitud,
+      //longitud: this.currentMonitoreo.longitud,
       user: this.currentMonitoreo.user,
       pass: this.currentMonitoreo.pass
     };

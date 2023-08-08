@@ -18,3 +18,9 @@ th, td {
   width: 150px;
 }
 
+
+
+.div-pair-container
+.form-group{
+  display: inline-block;
+}

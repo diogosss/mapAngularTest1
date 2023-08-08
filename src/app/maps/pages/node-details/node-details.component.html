@@ -69,50 +69,58 @@
           name="direction"
         />
       </div>
-      <div class="form-group">
-        <label for="latitud">🌐 Latitud</label>
-        <input
-          placeholder="Latitud"
-          type="text"
-          class="form-control"
-          id="latitud"
-          [(ngModel)]="currentMonitoreo.latitud"
-          name="latitud"
-        />
+
+      <div class="div-pair-container">
+        <div class="form-group">
+          <label for="latitud">🌐 Latitud</label>
+          <input
+            placeholder="Latitud"
+            type="text"
+            class="form-control"
+            id="latitud"
+            [(ngModel)]="currentMonitoreo.latitud"
+            name="latitud"
+            disabled
+          />
+        </div>
+        <div class="form-group">
+          <label for="longitud">🌐 Longitud</label>
+          <input
+            placeholder="Longitud"
+            type="text"
+            class="form-control"
+            id="longitud"
+            [(ngModel)]="currentMonitoreo.longitud"
+            name="longitud"
+            disabled
+          />
+        </div>
       </div>
-      <div class="form-group">
-        <label for="longitud">🌐 Longitud</label>
-        <input
-          placeholder="Longitud"
-          type="text"
-          class="form-control"
-          id="longitud"
-          [(ngModel)]="currentMonitoreo.longitud"
-          name="longitud"
-        />
-      </div>
-      <div class="form-group">
-        <label for="user">👤 Usuario</label>
-        <input
-          placeholder="user"
-          type="text"
-          class="form-control"
-          id="user"
-          [(ngModel)]="currentMonitoreo.user"
-          name="user"
-        />
-      </div>
-      <div class="form-group">
-        <label for="pass">🔑 Contraseña</label>
-        <input
-          placeholder="pass"
-          type="text"
-          class="form-control"
-          id="pass"
-          [(ngModel)]="currentMonitoreo.pass"
-          name="pass"
-        />
-      </div>
+
+      <div class="div-pair-container">
+        <div class="form-group">
+          <label for="user">👤 Usuario</label>
+          <input
+            placeholder="user"
+            type="text"
+            class="form-control"
+            id="user"
+            [(ngModel)]="currentMonitoreo.user"
+            name="user"
+          />
+        </div>
+        <div class="form-group">
+          <label for="pass">🔑 Contraseña</label>
+          <input
+            placeholder="pass"
+            type="password"
+            class="form-control"
+            id="pass"
+            [(ngModel)]="currentMonitoreo.pass"
+            name="pass"
+          />
+        </div>
+    </div>
     </form>
   </div>
 
