@@ -18,3 +18,9 @@ button {
   bottom: 30px;
   right: 30px;
 }
+
+.toggleMap{
+  position: fixed;
+  top: 50px;
+  height: 50px;
+}
