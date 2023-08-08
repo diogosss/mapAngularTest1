@@ -24,7 +24,7 @@ export class MarkersPageComponent{
 
   public zoom: number=16.5;
   public map?: Map;
-  public currentLngLat: LngLat= new LngLat( -78.53323670257686,-0.3523443818688474); //-0.3523443818688474, -78.53323670257686
+  public currentLngLat: LngLat= new LngLat( -78.532757, -0.352193); //-0.3523443818688474, -78.53323670257686
 
   ngAfterViewInit(): void {
 
