@@ -19,6 +19,8 @@ export class MarkersPageComponent{
 
   @ViewChild('map') divMap?: ElementRef;
 
+  isSatelliteStyle = false; // Track the current map style
+
   //public markers: Marker[] = [];
   public markers: MarkerAndColor[] = [];
 
@@ -33,7 +35,8 @@ export class MarkersPageComponent{
     console.log(this.divMap);
     this.map = new Map({
       container: this.divMap.nativeElement,
-      style: 'mapbox://styles/mapbox/streets-v12',
+      //style: 'mapbox://styles/mapbox/streets-v12',
+      style: this.isSatelliteStyle ? 'mapbox://styles/mapbox/satellite-v9' : 'mapbox://styles/mapbox/streets-v12',
       center: this.currentLngLat,
       zoom: this.zoom,
     });
@@ -155,6 +158,12 @@ export class MarkersPageComponent{
     })
 
   }
+
+  toggleMapStyle(): void {
+    this.isSatelliteStyle = !this.isSatelliteStyle;
+    this.map?.setStyle(this.isSatelliteStyle ? 'mapbox://styles/mapbox/satellite-v9' : 'mapbox://styles/mapbox/streets-v12');
+  }
+
 
 
 }
