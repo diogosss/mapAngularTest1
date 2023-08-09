@@ -28,7 +28,7 @@
 
 /* Large profile image */
 .large-profile {
-  background: url('../../../../assets/person.webp');
+  background: url('../../../../assets/AlexCenteno.png');
   background-size: cover;
   background-position: center;
 }
@@ -40,4 +40,5 @@ text-align: center;
 
 .about-me p{
   text-align:justify;
+  margin-bottom: 0px;
 }
